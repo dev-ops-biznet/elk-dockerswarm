@@ -4,6 +4,6 @@
 #
 server.name: kibana
 server.host: "0"
-elasticsearch.url: http://192.168.3.237:9200
+elasticsearch.url: http://192.168.0.42:9200
 #logging.dest: /var/log/kibana/kibana.log
 #monitoring.ui.container.elasticsearch.enabled: true
