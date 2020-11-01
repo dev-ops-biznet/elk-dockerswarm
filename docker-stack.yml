@@ -11,7 +11,8 @@ services:
       - source: elastic_config
         target: /usr/share/elasticsearch/config/elasticsearch.yml
     environment:
-      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ES_JAVA_OPTS: "-Xmx4g -Xms4g"
+      TZ: "Asia/Jakarta"
     networks:
       - elk
     deploy:
@@ -29,7 +30,8 @@ services:
       - source: logstash_pipeline
         target: /usr/share/logstash/pipeline/logstash.conf
     environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      TZ: "Asia/Jakarta"
+      LS_JAVA_OPTS: "-Xmx4g -Xms4g"
     networks:
       - elk
     deploy:
