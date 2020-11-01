@@ -1,0 +1,17 @@
+input {
+       beats {
+            port => 5044
+      }
+}
+ 
+output {
+  elasticsearch {
+    hosts => ["192.168.3.237:9200"]
+    sniffing => true
+    manage_template => false
+    index => "%{[fields][server]}-%{[fields][app]}-%{+YYYY.MM.dd}"
+  }
+}
+
+
+## Add your filters / logstash plugins configuration her
